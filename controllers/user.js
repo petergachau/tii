@@ -49,7 +49,7 @@ export const signup = async (req, res) => {
       createdAt:new Date().toISOString(),
     });
 
-    const token = jwt.sign({ email: result.email,admin:result.admin, id: result._id }, secret, {
+    const token = jwt.sign({emaFile:result.imageFile, email: result.email,admin:result.admin, id: result._id }, secret, {
       expiresIn: "1h",
     });
     res.status(201).json({ result, token });
