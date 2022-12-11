@@ -7,7 +7,18 @@ import tourRouter from "./routes/tour.js";
 import statsRouter from "./routes/admin.js";
 import adminRouter from "./routes/userCrud.js";
 import dotenv from "dotenv";
+import helmet from 'helmet';
+import  multer from "multer";
+import bodyParser from "body-parser";
+import path from 'path';
+import { fileURLToPath } from "url";
 
+
+
+// Configureations
+
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
 const app = express();
 dotenv.config();
 
@@ -15,7 +26,10 @@ app.use(morgan("dev"));
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-
+app.use(helmet())
+app.use(helmet.crossOriginResourcePolicy({policy:'cross-origin'}))
+app.use('assets', express.static(path.join(__dirname,'public/assets')))
+  routes
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/tour", tourRouter);
 app.use("/stats", statsRouter);
