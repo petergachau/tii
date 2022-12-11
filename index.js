@@ -35,7 +35,7 @@ app.use("/tour", tourRouter);
 app.use("/stats", statsRouter);
 app.use("/admin", adminRouter);
 app.get("/", (req, res) => {
-  res.send("Welcome to tour API");
+  res.send("Welcome to Hustle kenya API");
 });
 
 const port = process.env.PORT || 5000;
