@@ -6,7 +6,12 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: false },
   googleId: { type: String, required: false },
   admin:{type:String,default:false},
+  imageFil:{ type: String},
   id: { type: String },
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
 });
 
 export default mongoose.model("User", userSchema);
