@@ -29,7 +29,6 @@ app.use(cors());
 app.use(helmet())
 app.use(helmet.crossOriginResourcePolicy({policy:'cross-origin'}))
 app.use('assets', express.static(path.join(__dirname,'public/assets')))
-  routes
 app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/tour", tourRouter);
 app.use("/stats", statsRouter);

@@ -6,8 +6,13 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: false },
   googleId: { type: String, required: false },
   admin:{type:String,default:false},
-  imageFil:{ type: String},
+  imageFile:{ type: String},
+  userName:{ type: String},
   id: { type: String },
+  friends:{
+    type:Array,
+    default:[]
+  },
   createdAt: {
     type: Date,
     default: new Date(),
