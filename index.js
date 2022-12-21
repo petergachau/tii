@@ -12,7 +12,7 @@ import  multer from "multer";
 import bodyParser from "body-parser";
 import path from 'path';
 import { fileURLToPath } from "url";
-
+import friendsRouter from './routes/userFriends.js'
 
 
 // Configureations
@@ -33,6 +33,7 @@ app.use("/users", userRouter); // http://localhost:5000/users/signup
 app.use("/tour", tourRouter);
 app.use("/stats", statsRouter);
 app.use("/admin", adminRouter);
+app.use("/userFriends", friendsRouter);
 app.get("/", (req, res) => {
   res.send("Welcome to Hustles kenya API");
 });

@@ -7,6 +7,8 @@ export const createTour = async (req, res) => {
     ...tour,
     creator: req.userId,
     createdAt: new Date().toISOString(),
+    likes:{},
+    comments:[]
   });
 
   try {

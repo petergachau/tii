@@ -13,10 +13,12 @@ const userSchema = mongoose.Schema({
     type:Array,
     default:[]
   },
+  location:String,
+  occupation:String,
   createdAt: {
     type: Date,
     default: new Date(),
   },
-});
+},{timestamps:true});
 
 export default mongoose.model("User", userSchema);

@@ -4,7 +4,7 @@ import auth from "../middleware/auth.js";
 const router = express.Router();
 
 
-router.post("/update", auth, updateTour);
+router.post("/update/:id", auth, updateTour);
 router.get("/", getUsers);
 router.delete("/delete/:id", auth, deleteUser);
 router.get("/:id", getTour);

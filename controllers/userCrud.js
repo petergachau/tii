@@ -66,7 +66,7 @@ export const deleteUser = async (req, res) => {
 
 export const updateTour = async (req, res) => {
   const { id } = req.params;
-  const { name, email, admin, imageFile, houseNO, } = req.body;
+  const { fistName,lastName,occupation,location ,userName, email, admin, imageFile } = req.body;
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       return res.status(404).json({ message: `No tour exist with id: ${id}` });
@@ -74,9 +74,15 @@ export const updateTour = async (req, res) => {
 
     const updatedTour = {
       creator,
-      name,
+      fistName,
+      lastName,
+      location,
+      occupation,
+      userName,
       email,
+
       admin,
+
       _id: id,
     };
     await UserModal.findByIdAndUpdate(id, updatedTour, { new: true });

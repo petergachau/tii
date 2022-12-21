@@ -14,11 +14,17 @@ const tourSchema = mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  picturePath: String,
+  userPicturePath: String,
   likes: {
-    type: [String],
+    type: Map,
+    of: Boolean,
+  },
+  comments: {
+    type: Array,
     default: [],
   },
-});
+},{timestamps:true});
 
 const TourModal = mongoose.model("Tour", tourSchema);
 
