@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
   admin:{type:String,default:false},
   imageFile:{ type: String},
   userName:{ type: String},
+  phone:{ type: Number},
   id: { type: String },
   friends:{
     type:Array,

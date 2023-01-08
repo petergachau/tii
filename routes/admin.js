@@ -70,7 +70,7 @@ router.get ('/cars',  async (req,res)=>{
 
 
 })
-router.get ('/properties',  async (req,res)=>{
+router.get ('/phones',  async (req,res)=>{
     const previosMonth=moment()
     .month(moment().month()-12)
     .set('date',1)
@@ -78,7 +78,7 @@ router.get ('/properties',  async (req,res)=>{
     // res.status(200).send(previosMonth)
     try {
         const users= await TourModal.aggregate([
-            { $match : { brand:'Properties'} },
+            { $match : { brand:'Phones'} },
             
             // { $match : { isAdmin : true } },
             // { $match : { supervisor : true } },
