@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
   googleId: { type: String},
   admin:{type:String,default:false},
   imageFile:{ type: String},
-  // userName:{ type: String},
+  userName:{ type: String},
   id: { type: String },
   friends:{
     type:Array,
