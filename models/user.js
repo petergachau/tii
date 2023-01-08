@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   password: { type: String, required: false },
   googleId: { type: String},
   admin:{type:String,default:false},
-  phone:{type:Number}
+  phone:{type:Number},
   imageFile:{ type: String},
   userName:{ type: String},
   id: { type: String },
