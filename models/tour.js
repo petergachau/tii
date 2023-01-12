@@ -9,7 +9,7 @@ const tourSchema = mongoose.Schema({
  phone:Number,
  price:Number,
  brand:String,
-  imageFile: { type: Object, required: true },
+  imageFile: { type:String},
   createdAt: {
     type: Date,
     default: new Date(),
